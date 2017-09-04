@@ -8,7 +8,7 @@ const debug = require('debug')('demo-form-component:birthyear-formfield')
 
 export function Component({id, label, dispatch, ...restProps} = {id: randomId()}) {
 	return (
-		<div className="formField">
+		<div className="formfield">
 			<label htmlFor={id}>{label}</label>
 			<br />
 			<input type="text" id={id} maxLength="4" {...restProps} />
