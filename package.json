@@ -70,7 +70,7 @@
     "test": "NODE_ENV=test jest --verbose",
     "test:watch": "yarn test -- --watch",
     "start": "NODE_ENV=dev webpack-dev-server --config=./webpack.dev.js",
-    "build": "NODE_ENV=prod webpack",
+    "build": "NODE_ENV=prod webpack --config=./webpack.prod.js",
     "build:demo": "NODE_ENV=prod webpack --config=./webpack.demo.js"
   }
 }

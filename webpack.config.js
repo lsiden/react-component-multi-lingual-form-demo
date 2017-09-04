@@ -25,7 +25,6 @@ const config = {
 			}
 		]
 	},
-	devtool: process.env.NODE_ENV.match(/^prod/i) ? "source-map" : "eval-source-map",
 	plugins: [
 	],
 };

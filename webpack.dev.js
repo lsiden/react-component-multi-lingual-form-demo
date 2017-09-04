@@ -8,4 +8,5 @@ module.exports = Object.assign(require('./webpack.config.js'), {
 		contentBase: './demo/',
 		inline: true,
 	},
+	devtool: "eval-source-map",
 })

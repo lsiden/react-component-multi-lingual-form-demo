@@ -1,4 +1,4 @@
-# Affordable Living Calculator Web Component
+# Multi-lingual React Form Component
 
 Demo of re-usable React component with multi-lingual form.
 

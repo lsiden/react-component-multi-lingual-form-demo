@@ -13,4 +13,5 @@ module.exports = Object.assign(require('./webpack.config.js'), {
 		path: path.resolve(__dirname, 'dist'),
 		publicPath: 'dist'
 	},
+	devtool: "eval-source-map",
 })
