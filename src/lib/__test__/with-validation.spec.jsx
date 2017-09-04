@@ -6,7 +6,7 @@ import Translator from '../translator'
 import withValidation from '../with-validation'
 import { simulateChange } from '../test-helpers'
 
-const debug = require('debug')('alc-webcomponent:with-validation-spec')
+const debug = require('debug')('demo-form-component:with-validation-spec')
 
 describe('WithValidation', () => {
 

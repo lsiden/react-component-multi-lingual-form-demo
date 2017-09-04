@@ -4,12 +4,12 @@ import { shallow, mount, render } from 'enzyme';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
-import Alc from '../alc'
+import DemoFormComponent from '../main'
 import Translator from '../lib/translator'
 
-const debug = require('debug')('alc-webcomponent:alc.spec')
+const debug = require('debug')('demo-form-component:main.spec')
 
-describe('Alc', function() {
+describe('DemoFormComponent', function() {
 	describe('response to translator property', () => {
 
 		const SET_XL8R = 'set translator'
@@ -36,7 +36,7 @@ describe('Alc', function() {
 			}
 		}
 
-		class AlcStoreProvider extends React.Component {
+		class ReduxStoreProvider extends React.Component {
 			constructor(props) {
 				super(props)
 				this.store = createStore(reduce, { xl8: mkxl8('en') })
@@ -51,12 +51,12 @@ describe('Alc', function() {
 			render() {
 				return (
 					<Provider store={this.store}>
-						<Alc />
+						<DemoFormComponent />
 					</Provider>
 				)
 			}
 		}
-		AlcStoreProvider.propTypes = {
+		ReduxStoreProvider.propTypes = {
 			lang: PropTypes.string.isRequired,
 		}
 
@@ -65,12 +65,12 @@ describe('Alc', function() {
 		beforeEach(() => {
 			const translator = new Translator({})
 			const xl8 = translator.xlate.bind(translator)
-			wrapper = mount(<AlcStoreProvider lang="en" />)
-			errorMsg = wrapper.find('.input-error').first()
+			wrapper = mount(<ReduxStoreProvider lang="en" />)
+			errorMsg = wrapper.find('#gender-formfield .input-error')
 		})
 
 		it('renders', function() {
-			expect(shallow(<AlcStoreProvider lang='en' />)).toBeTruthy()
+			expect(shallow(<ReduxStoreProvider lang='en' />)).toBeTruthy()
 		})
 
 		// This test requires connecting to Redux store.

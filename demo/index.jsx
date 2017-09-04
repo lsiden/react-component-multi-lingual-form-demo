@@ -5,9 +5,9 @@ import PropTypes from 'prop-types'
 import Translator from '../src/lib/translator'
 import languages from '../src/lib/languages'
 import * as Helpers from '../src/lib/helpers'
-import Alc from '../src/index'
+import DemoFormComponent from '../src/index'
 
-const debug = require('debug')('alc-webcomponent:index')
+const debug = require('debug')('demo-form-component:index')
 const myPreferredLanguagePrompt = 'My preferred language is'
 
 function SelectLanguage(props) {
@@ -19,7 +19,7 @@ function SelectLanguage(props) {
 	)
 }
 
-class AlcDemo extends React.Component {
+class Component extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -41,16 +41,16 @@ class AlcDemo extends React.Component {
 					<br />
 					<SelectLanguage onChange={this.onChangeLanguage} />
 				</form>
-				<Alc lang={this.state.lang} />
+				<DemoFormComponent lang={this.state.lang} />
 			</div>
 		)
 	}
 }
 
-(function mountAlcTest() {
-	const el = document.getElementById('test-alc-mountpoint')
+(function mountDemo() {
+	const el = document.getElementById('form-demo-mountpoint')
 
 	if (el) {
-		ReactDOM.render(<AlcDemo />, el)
+		ReactDOM.render(<Component />, el)
 	}
 })()

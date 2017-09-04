@@ -1,4 +1,4 @@
-// Provide Alc with React store.
+// Provides DemoFormComponent with React store.
 
 import React from 'react';
 import PropTypes from 'prop-types'
@@ -6,9 +6,9 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
 import { mkxl8 } from './lib/helpers'
-import Alc from './alc'
+import DemoFormComponent from './main'
 
-const debug = require('debug')('alc-webcomponent:alc')
+const debug = require('debug')('demo-form-component:index')
 const SET_XL8R = 'set translator'
 
 function setLanguage(lang) {
@@ -24,7 +24,7 @@ function reduce(state={}, action) {
 	}
 }
 
-export default class AlcStoreProvider extends React.Component {
+export default class Component extends React.Component {
 	constructor(props) {
 		super(props)
 		this.store = createStore(reduce, { xl8: mkxl8(props.lang) })
@@ -39,11 +39,11 @@ export default class AlcStoreProvider extends React.Component {
 	render() {
 		return (
 			<Provider store={this.store}>
-				<Alc />
+				<DemoFormComponent />
 			</Provider>
 		)
 	}
 }
-AlcStoreProvider.propTypes = {
+Component.propTypes = {
 	lang: PropTypes.string.isRequired,
 }

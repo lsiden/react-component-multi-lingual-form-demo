@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import { sprintf } from './helpers'
+import { sprintf, randomId } from './helpers'
 
-const debug = require('debug')('alc-webcomponent:with-validation')
+const debug = require('debug')('demo-form-component:with-validation')
 
 function ErrorMsg({msg}) {
 	// debug(msg)
@@ -47,7 +47,7 @@ export default function(FormInput) {
 		}
 
 		render() {
-			const { onChange, validator, value, ...remProps } = this.props
+			const { onChange, validator, value, id, ...remProps } = this.props
 			const passProps = {
 				onChange: this.onChange,
 				...remProps,
@@ -57,7 +57,7 @@ export default function(FormInput) {
 				passProps.className = 'invalid'
 			}
 			return (
-				<div>
+				<div id={id}>
 					<FormInput value={this.state.value} {...passProps} />
 					{ this.state.errorMsg && <ErrorMsg msg={this.state.errorMsg} /> }
 				</div>
@@ -67,9 +67,11 @@ export default function(FormInput) {
 	Component.propTypes = {
 		validator: PropTypes.func.isRequired,
 		value: PropTypes.any,
+		id: PropTypes.string,
 	}
 	Component.defaultProps = {
 		value: '',
+		id: randomId(),
 	}
 	return Component
 }

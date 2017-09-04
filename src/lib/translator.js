@@ -1,6 +1,6 @@
 import { sprintf } from './helpers'
 
-const debug = require('debug')('alc-webcomponent:translator')
+const debug = require('debug')('demo-form-component:translator')
 
 export default class {
 	constructor(dictionary={}) {

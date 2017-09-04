@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import WithValidation from '../lib/with-validation'
 import { randomId, sprintf } from '../lib/helpers'
 
-const debug = require('debug')('alc-webcomponent:on-behalf-of-formfield')
+const debug = require('debug')('demo-form-component:on-behalf-of-formfield')
 
 export function Component({ id, label, value, onChange, xl8, } = { id: randomId() }) {
 	return (

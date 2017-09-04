@@ -4,7 +4,7 @@ import { shallow, mount, render } from 'enzyme';
 import { Component as OnBehalfOfFormField } from '../on-behalf-of-formfield'
 import { simulateChange } from '../../lib/test-helpers'
 
-const debug = require('debug')('alc-webcomponent:gender-formfield-spec')
+const debug = require('debug')('demo-form-component:gender-formfield-spec')
 
 describe('Birthyear form field', function() {
 

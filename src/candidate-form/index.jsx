@@ -3,13 +3,12 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import BirthyearFormfield from './birthyear-formfield'
-import OnBehalfOfFormfield from './on-behalf-of-formfield'
 import GenderFormfield from './gender-formfield'
 import Styles from '../styles.css'
 import { isEmpty, sprintf } from '../lib/helpers'
 import * as phrases from '../lib/languages/en-phrases'
 
-const debug = require('debug')('alc-webcomponent:candidate-form')
+const debug = require('debug')('demo-form-component:candidate-form')
 const maxAllowedBirthYear = new Date().getYear() + 1900 // this year
 const minAllowedBirthYear = maxAllowedBirthYear - 120 // 120 years ago max
 
@@ -27,39 +26,28 @@ export class Component extends React.Component {
 	}
 
 	render() {
-		const onBehalfOfLabel = this.props.xl8('I am researching care-facility costs on behalf of')
 		const birthYearLabel = this.birthYearLabel()
 		const genderLabel = this.genderLabel()
 		return (
 			<form onSubmit={this.props.onSubmit}>
-				<OnBehalfOfFormfield
-					name="onBehalfOf"
-					value={this.props.onBehalfOf}
-					label={onBehalfOfLabel}
+				<p>{this.promptText()}</p>
+				<BirthyearFormfield
+					name="birthYear"
+					value={this.state.birthYear}
+					label={birthYearLabel}
 					onChange={this.onChange}
-					validator={this.requiredValidator}
+					validator={this.birthyearValidator}
+					id="birthyear-formfield"
 				/>
 				<br />
-				{ !!this.state.onBehalfOf &&
-					<div>
-						<p>{this.promptText()}</p>
-						<BirthyearFormfield
-							name="birthYear"
-							value={this.state.birthYear}
-							label={birthYearLabel}
-							onChange={this.onChange}
-							validator={this.birthyearValidator}
-						/>
-						<br />
-						<GenderFormfield
-							name="gender"
-							value={this.state.gender}
-							label={genderLabel}
-							onChange={this.onChange}
-							validator={this.requiredValidator}
-						/>
-					</div>
-				}
+				<GenderFormfield
+					name="gender"
+					value={this.state.gender}
+					label={genderLabel}
+					onChange={this.onChange}
+					validator={this.requiredValidator}
+					id="gender-formfield"
+				/>
 			</form>
 		)
 	}

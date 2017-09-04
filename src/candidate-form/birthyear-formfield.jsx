@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import WithValidation from '../lib/with-validation'
 import {randomId, sprintf} from '../lib/helpers'
 
-const debug = require('debug')('alc-webcomponent:birthyear-formfield')
+const debug = require('debug')('demo-form-component:birthyear-formfield')
 
 export function Component({id, label, dispatch, ...restProps} = {id: randomId()}) {
 	return (

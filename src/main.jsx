@@ -5,9 +5,9 @@ import { connect } from 'react-redux'
 import CandidateForm from './candidate-form'
 import { sprintf } from './lib/helpers'
 
-const debug = require('debug')('alc-webcomponent:alc')
+const debug = require('debug')('demo-form-component:main')
 
-class Alc extends React.Component {
+class Component extends React.Component {
 	constructor(props) {
 		super(props)
 	}
@@ -24,10 +24,10 @@ class Alc extends React.Component {
 	}
 }
 
-Alc.propTypes = {
+Component.propTypes = {
 	xl8: PropTypes.func,
 }
-Alc.defaultProps = {
+Component.defaultProps = {
 	xl8: (format, args) => sprintf(format, args)
 }
 
@@ -36,4 +36,4 @@ export default connect(
 	dispatch => ({
 		setLanguage: lang => dispatch(setLanguage(lang)),
 	})
-)(Alc)
+)(Component)
