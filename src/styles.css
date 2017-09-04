@@ -1,0 +1,8 @@
+.formfield {
+	display: inline;
+}
+
+.input-error {
+	color: red;
+	margin-left: 1em;
+}
