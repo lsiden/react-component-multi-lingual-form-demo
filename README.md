@@ -2,7 +2,7 @@
 
 Demo of re-usable React component with multi-lingual form.
 
-Browse to https://lsiden.github.io/ to see a live demo.
+Browse to https://lsiden.github.io/react-component-multi-lingual-form-demo/ to see a live demo.
 
 ## Description
 
