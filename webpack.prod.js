@@ -1,5 +1,4 @@
 const path = require('path')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = Object.assign(require('./webpack.config.js'), {
 	output: {
@@ -8,8 +7,5 @@ module.exports = Object.assign(require('./webpack.config.js'), {
 		publicPath: 'dist'
 	},
 	plugins: [
-		new UglifyJSPlugin({
-			test: /\.js[x]?$/,
-		})
 	]
 })
