@@ -4,7 +4,7 @@
   "description": "Reeact seed component for development.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lsiden/local-number-input.git"
+    "url": "git+https://github.com/lsiden/react-component-multi-lingual-form-demo"
   },
   "keywords": [
     "local",
@@ -15,9 +15,9 @@
   "author": "Lawrence Siden",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lsiden/local-number-input/issues"
+    "url": "https://github.com/lsiden/react-component-multi-lingual-form-demo/issues"
   },
-  "homepage": "https://github.com/lsiden/local-number-input#readme",
+  "homepage": "https://github.com/lsiden/react-component-multi-lingual-form-demo/blob/master/README.md",
   "entry": "dist/bundle.js",
   "dependencies": {
     "classnames": "^2.2.5",
@@ -70,7 +70,7 @@
     "test": "NODE_ENV=test jest --verbose",
     "test:watch": "yarn test -- --watch",
     "start": "NODE_ENV=dev webpack-dev-server --config=./webpack.dev.js",
-    "build": "NODE_ENV=prod webpack --config=./webpack.prod.js",
+    "prepare": "NODE_ENV=prod webpack --config=./webpack.prod.js",
     "build:demo": "NODE_ENV=prod webpack --config=./webpack.demo.js"
   }
 }
