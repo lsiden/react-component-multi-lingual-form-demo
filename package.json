@@ -18,7 +18,7 @@
     "url": "https://github.com/lsiden/react-component-multi-lingual-form-demo/issues"
   },
   "homepage": "https://github.com/lsiden/react-component-multi-lingual-form-demo/blob/master/README.md",
-  "entry": "dist/bundle.js",
+  "main": "dist/bundle.js",
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.10",
