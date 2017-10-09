@@ -46,7 +46,6 @@
     "redux-tools": "^1.0.3",
     "regenerator-runtime": "^0.10.5",
     "style-loader": "^0.18.2",
-    "uglify-js": "^3.0.27",
     "webpack-dev-server": "^2.7.1"
   },
   "babel": {
@@ -71,6 +70,6 @@
     "test:watch": "yarn test -- --watch",
     "start": "NODE_ENV=dev webpack-dev-server --config=./webpack.dev.js",
     "prepare": "NODE_ENV=prod webpack --config=./webpack.prod.js",
-    "build:demo": "NODE_ENV=prod webpack --config=./webpack.demo.js"
+    "prepare:demo": "NODE_ENV=prod webpack --config=./webpack.demo.js"
   }
 }
